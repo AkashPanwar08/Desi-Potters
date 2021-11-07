@@ -1,0 +1,37 @@
+
+    async function run(){
+      var codeContent = editorCodeBlock.getValue();
+      const data = {
+        "source_code": codeContent,
+        "language_id": 71,
+        "stdin": "world",
+        'max_processes_and_or_threads': 5
+      }
+      var url = 'http://localhost:2358/submissions/?base64_encoded=false&wait=false';
+
+
+      fetch(url,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then((response)=> {
+        return (response.json());
+      })
+      .then((data)=>{
+        url_ = 'http://localhost:2358//submissions/' + data.token + '?base64_encoded=false&fields';
+      })
+      .catch((error)=>{
+        console.error(error);
+      })
+
+      fetch(url_)
+      .then((response)=> {
+        return response.json();
+      })
+      .then((response)=> {
+        console.log(response);
+      })
+    }

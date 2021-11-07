@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Monaco</title>
+<link rel="stylesheet" href="https://doc-0k-58-docs.googleusercontent.com/docs/securesc/216n99580orcgch1nu745cq2g0pf3los/1svted3o8c3pqk0dhkpftpat4jbi9nbg/1633189200000/15593722071496736907/15593722071496736907/1tn8LE7H8QNhILJ-W8vWOvpTsO1YR6uS9?e=view&authuser=0&nonce=ctg2ca1r08f66&user=15593722071496736907&hash=rnm13i2mqc3ph551an4bbb4ce3ovr441">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" data-name="vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.27.0/min/vs/editor/editor.main.min.css"/>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <script> var require = {paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.27.0/min/vs' }};</script>
+    S
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.27.0/min/vs/loader.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.27.0/min/vs/editor/editor.main.nls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.27.0/min/vs/editor/editor.main.min.js"></script><h1>Text Editor</h1>
+<div class="editor">
+
+<label for="languages">Choose a language:</label>
+<select id="languages" >
+  <option value="cpp">C/Cpp</option>
+  <option value="csharp">Csharp</option>
+  <option value="python">Python</option>
+  <option value="ruby">Ruby</option>
+</select>
+<select id="themes" >
+    <option value="vs">Light</option>
+    <option value="vs-dark">Dark</option>
+    <option value="hc-black">High Contrast</option>
+  </select>
+<input type='submit' onclick='getLang();'>
+    <pre id = "codeBlock" >
+        {{ codeContent }}
+    </pre>
+</div>
+<script>
+    var getValue = "csharp";
+
+    function getLang(){
+        language = document.getElementById('languages').selectedOptions[0].value;
+        theme = document.getElementById('themes').selectedOptions[0].value;
+        var codeContent = '';
+        codeContent = $.trim($('#codeBlock').text());
+        $('#codeBlock').html('');
+    
+        var editorCodeBlock = monaco.editor.create(document.getElementById("codeBlock"), {
+            value: '',
+            language: language,
+            theme: theme,
+            lineNumbers: 'on',
+            glyphMargin: true,
+            vertical: 'auto',
+            horizontal: 'auto',
+            verticalScrollbarSize: 10,
+            horizontalScrollbarSize: 10,
+            scrollBeyondLastLine: false,
+            readOnly: false,
+            automaticLayout: false,
+            minimap: {
+                enabled: true
+            },
+            lineHeight: 19,
+        });
+        $('#codeBlock').height(580);
+        $('#codeBlock').width(800);
+    }
+    var codeContent = $.trim($('#codeBlock').text());
+    $('#codeBlock').html('');
+
+    var editorCodeBlock = monaco.editor.create(document.getElementById("codeBlock"), {
+        value: codeContent,
+        language: getValue,
+        theme: "vs",
+        lineNumbers: 'on',
+        glyphMargin: true,
+        vertical: 'auto',
+        horizontal: 'auto',
+        verticalScrollbarSize: 10,
+        horizontalScrollbarSize: 10,
+        scrollBeyondLastLine: false,
+        readOnly: false,
+        automaticLayout: true,
+        minimap: {
+            enabled: true
+        },
+        lineHeight: 19,
+    });
+    $('#codeBlock').height(580);
+    $('#codeBlock').width(800);
+
+
+    fetch("https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&fields=*", {
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json",
+            "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
+            "x-rapidapi-key": "34e796c552msh12d78bff28ac0b8p1dca49jsne5b2f023887d"
+        },
+        "body": {
+            "language_id": 52,
+            "source_code": "I2luY2x1ZGUgPHN0ZGlvLmg+CgppbnQgbWFpbih2b2lkKSB7CiAgY2hhciBuYW1lWzEwXTsKICBzY2FuZigiJXMiLCBuYW1lKTsKICBwcmludGYoImhlbGxvLCAlc1xuIiwgbmFtZSk7CiAgcmV0dXJuIDA7Cn0=",
+            "stdin": "SnVkZ2Uw"
+        }
+    })
+    .then(response => {
+        console.log(response);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+
+
+
+
+
+
+    fetch("https://judge0-ce.p.rapidapi.com/about", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
+            "x-rapidapi-key": "34e796c552msh12d78bff28ac0b8p1dca49jsne5b2f023887d"
+        }
+    })
+    .then(response => {
+        console.log(response);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+</script>
+</body>
+</html>

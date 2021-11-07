@@ -1,0 +1,4 @@
+For creating new virtual env:
+python -m venv path\venv-name
+For activation of existing virtual env:
+.\Scripts\activate

@@ -1,0 +1,190 @@
+html,body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.header{
+    height: 10%;
+    background-color:#888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+.header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+}
+
+.nav{
+    height: 7%;
+    width: 100%;
+    background-color:rgb(250, 144, 102);
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 5px 5px grey;
+}
+
+.nav > a{
+    display: flex;
+    height: 100%;
+    width: 6%;
+    text-decoration: none;
+    color: rgb(10, 1, 1);
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-right: 1%;
+}
+
+.container{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 5px 5px grey;
+    height: 65%;
+    width: 25%;
+    background-color: white;
+    border-radius: 3%;
+}
+
+.container > h1{
+    color: rgb(192, 111, 79);
+    padding: 1%;
+    text-align: center;
+    
+}
+
+.container > hr{
+    width: 10%;
+    border:solid 2.5px rgb(250, 144, 102);
+}
+
+.container > form{
+    margin-left: 10%;
+    margin-top: 10%;
+    color:rgb(192, 111, 79);
+}
+.container > form > input[type="password"], input[type="text"], input[type="email"]{
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+}
+
+
+.container > form > input[type=submit] {
+    font-size: 20px;
+    width: 90%;
+    background-color: rgb(192, 111, 79);
+    color: white;
+    padding: 4% 6%;
+    margin-top: 8%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container > form > input:focus {
+    outline-color:rgb(141, 85, 62);
+}
+input[type=submit]:hover {
+    background-color: rgb(141, 85, 62);
+}  
+
+#particles-js
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+#chart{
+    width: 30%; 
+    height: 30%;
+    float: right;
+}
+
+.details{
+    display: block;
+    position: relative;
+    height: 65%;
+    width: 70%;
+    top: 40%;
+    left: 50%;
+    box-shadow: 2px 4px 6px 2px grey;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-variant: tabular-nums;
+    border-radius: 6px;
+    transition: 0.5s;
+    padding-top: 2%;
+}
+.details:hover{
+    box-shadow: 5px 6px 10px 4px grey;
+}
+
+.details > strong {
+    margin: 5%;
+    opacity: 0.7;
+}
+
+.details > .text{
+    margin-top: 2.5%;
+    width: 65%;
+    margin-left: 5%;
+}
+
+.details > .text > hr{
+    border: 0.5x solid;
+    opacity: 0.2;
+}
+
+.details > .text > .left{
+    width: 30%;
+    float: left;
+    opacity: 0.9;
+}
+
+.details > .text > .right{
+    opacity: 0.7;
+}
+
+.btn{
+    position: relative;
+    left: 35%;
+    top: 5%;
+    width: 16%;
+    height: 8%;
+    background-color:rgb(250, 144, 102);
+    border: 0;
+    border-radius: 5px;
+    color: #000;
+    transition: 0.5s;
+    font-size: 18px;
+    color: #fff;
+}
+
+.btn:hover{
+    background-color:rgb(192, 111, 79);
+}
